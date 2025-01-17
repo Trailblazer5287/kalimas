@@ -1,0 +1,2392 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5173/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="module">
+    import RefreshRuntime from "/@react-refresh"
+    RefreshRuntime.injectIntoGlobalHook(window)
+    window.$RefreshReg$ = () => { }
+    window.$RefreshSig$ = () => (type) => type
+    window.__vite_plugin_react_preamble_installed__ = true
+  </script>
+
+  <script type="module" src="./DeFi Interface_files/client"></script>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeFi Interface</title>
+  <script src="./DeFi Interface_files/tailwind.min.js.download"></script>
+  <style type="text/css"
+    data-vite-dev-id="F:/Drainer/react/dragon-fly-builder/node_modules/react-toastify/dist/ReactToastify.css">
+    :root {
+      --toastify-color-light: #fff;
+      --toastify-color-dark: #121212;
+      --toastify-color-info: #c7d5df;
+      --toastify-color-success: #5d965f;
+      --toastify-color-warning: #f1c40f;
+      --toastify-color-error: hsl(6, 78%, 57%);
+      --toastify-color-transparent: rgba(255, 255, 255, 0.7);
+
+      --toastify-icon-color-info: var(--toastify-color-info);
+      --toastify-icon-color-success: var(--toastify-color-success);
+      --toastify-icon-color-warning: var(--toastify-color-warning);
+      --toastify-icon-color-error: var(--toastify-color-error);
+
+      --toastify-container-width: fit-content;
+      --toastify-toast-width: 320px;
+      --toastify-toast-offset: 16px;
+      --toastify-toast-top: max(var(--toastify-toast-offset), env(safe-area-inset-top));
+      --toastify-toast-right: max(var(--toastify-toast-offset), env(safe-area-inset-right));
+      --toastify-toast-left: max(var(--toastify-toast-offset), env(safe-area-inset-left));
+      --toastify-toast-bottom: max(var(--toastify-toast-offset), env(safe-area-inset-bottom));
+      --toastify-toast-background: #fff;
+      --toastify-toast-padding: 14px;
+      --toastify-toast-min-height: 64px;
+      --toastify-toast-max-height: 800px;
+      --toastify-toast-bd-radius: 6px;
+      --toastify-toast-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      --toastify-font-family: sans-serif;
+      --toastify-z-index: 9999;
+      --toastify-text-color-light: #757575;
+      --toastify-text-color-dark: #fff;
+
+      /* Used only for colored theme */
+      --toastify-text-color-info: #fff;
+      --toastify-text-color-success: #fff;
+      --toastify-text-color-warning: #fff;
+      --toastify-text-color-error: #fff;
+
+      --toastify-spinner-color: #616161;
+      --toastify-spinner-color-empty-area: #e0e0e0;
+      --toastify-color-progress-light: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+      --toastify-color-progress-dark: #bb86fc;
+      --toastify-color-progress-info: var(--toastify-color-info);
+      --toastify-color-progress-success: var(--toastify-color-success);
+      --toastify-color-progress-warning: var(--toastify-color-warning);
+      --toastify-color-progress-error: var(--toastify-color-error);
+      /* used to control the opacity of the progress trail */
+      --toastify-color-progress-bgo: 0.2;
+    }
+
+    .Toastify__toast-container {
+      z-index: var(--toastify-z-index);
+      -webkit-transform: translate3d(0, 0, var(--toastify-z-index));
+      position: fixed;
+      width: var(--toastify-container-width);
+      box-sizing: border-box;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .Toastify__toast-container--top-left {
+      top: var(--toastify-toast-top);
+      left: var(--toastify-toast-left);
+    }
+
+    .Toastify__toast-container--top-center {
+      top: var(--toastify-toast-top);
+      left: 50%;
+      transform: translateX(-50%);
+      align-items: center;
+    }
+
+    .Toastify__toast-container--top-right {
+      top: var(--toastify-toast-top);
+      right: var(--toastify-toast-right);
+      align-items: end;
+    }
+
+    .Toastify__toast-container--bottom-left {
+      bottom: var(--toastify-toast-bottom);
+      left: var(--toastify-toast-left);
+    }
+
+    .Toastify__toast-container--bottom-center {
+      bottom: var(--toastify-toast-bottom);
+      left: 50%;
+      transform: translateX(-50%);
+      align-items: center;
+    }
+
+    .Toastify__toast-container--bottom-right {
+      bottom: var(--toastify-toast-bottom);
+      right: var(--toastify-toast-right);
+      align-items: end;
+    }
+
+    @media only screen and (max-width: 480px) {
+      .Toastify__toast-container {
+        width: 100vw;
+        left: env(safe-area-inset-left);
+        margin: 0;
+      }
+
+      .Toastify__toast-container--top-left,
+      .Toastify__toast-container--top-center,
+      .Toastify__toast-container--top-right {
+        top: env(safe-area-inset-top);
+        transform: translateX(0);
+      }
+
+      .Toastify__toast-container--bottom-left,
+      .Toastify__toast-container--bottom-center,
+      .Toastify__toast-container--bottom-right {
+        bottom: env(safe-area-inset-bottom);
+        transform: translateX(0);
+      }
+
+      .Toastify__toast-container--rtl {
+        right: env(safe-area-inset-right);
+        left: initial;
+      }
+
+      .Toastify__toast {
+        --toastify-toast-width: 100%;
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+    }
+
+    .Toastify__toast {
+      --y: 0;
+      position: relative;
+      touch-action: none;
+      width: var(--toastify-toast-width);
+      min-height: var(--toastify-toast-min-height);
+      box-sizing: border-box;
+      margin-bottom: 1rem;
+      padding: var(--toastify-toast-padding);
+      border-radius: var(--toastify-toast-bd-radius);
+      box-shadow: var(--toastify-toast-shadow);
+      max-height: var(--toastify-toast-max-height);
+      font-family: var(--toastify-font-family);
+      /* webkit only issue #791 */
+      z-index: 0;
+      /* inner swag */
+      display: flex;
+      flex: 1 auto;
+      align-items: center;
+      word-break: break-word;
+    }
+
+    .Toastify__toast-container[data-stacked='true'] {
+      width: var(--toastify-toast-width);
+    }
+
+    .Toastify__toast--stacked {
+      position: absolute;
+      width: 100%;
+      transform: translate3d(0, var(--y), 0) scale(var(--s));
+      transition: transform 0.3s;
+    }
+
+    .Toastify__toast--stacked[data-collapsed] .Toastify__toast-body,
+    .Toastify__toast--stacked[data-collapsed] .Toastify__close-button {
+      transition: opacity 0.1s;
+    }
+
+    .Toastify__toast--stacked[data-collapsed='false'] {
+      overflow: visible;
+    }
+
+    .Toastify__toast--stacked[data-collapsed='true']:not(:last-child)>* {
+      opacity: 0;
+    }
+
+    .Toastify__toast--stacked:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: calc(var(--g) * 1px);
+      bottom: 100%;
+    }
+
+    .Toastify__toast--stacked[data-pos='top'] {
+      top: 0;
+    }
+
+    .Toastify__toast--stacked[data-pos='bot'] {
+      bottom: 0;
+    }
+
+    .Toastify__toast--stacked[data-pos='bot'].Toastify__toast--stacked:before {
+      transform-origin: top;
+    }
+
+    .Toastify__toast--stacked[data-pos='top'].Toastify__toast--stacked:before {
+      transform-origin: bottom;
+    }
+
+    .Toastify__toast--stacked:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      transform: scaleY(3);
+      z-index: -1;
+    }
+
+    .Toastify__toast--rtl {
+      direction: rtl;
+    }
+
+    .Toastify__toast--close-on-click {
+      cursor: pointer;
+    }
+
+    .Toastify__toast-icon {
+      margin-inline-end: 10px;
+      width: 22px;
+      flex-shrink: 0;
+      display: flex;
+    }
+
+    .Toastify--animate {
+      animation-fill-mode: both;
+      animation-duration: 0.5s;
+    }
+
+    .Toastify--animate-icon {
+      animation-fill-mode: both;
+      animation-duration: 0.3s;
+    }
+
+    .Toastify__toast-theme--dark {
+      background: var(--toastify-color-dark);
+      color: var(--toastify-text-color-dark);
+    }
+
+    .Toastify__toast-theme--light {
+      background: var(--toastify-color-light);
+      color: var(--toastify-text-color-light);
+    }
+
+    .Toastify__toast-theme--colored.Toastify__toast--default {
+      background: var(--toastify-color-light);
+      color: var(--toastify-text-color-light);
+    }
+
+    .Toastify__toast-theme--colored.Toastify__toast--info {
+      color: var(--toastify-text-color-info);
+      background: var(--toastify-color-info);
+    }
+
+    .Toastify__toast-theme--colored.Toastify__toast--success {
+      color: var(--toastify-text-color-success);
+      background: var(--toastify-color-success);
+    }
+
+    .Toastify__toast-theme--colored.Toastify__toast--warning {
+      color: var(--toastify-text-color-warning);
+      background: var(--toastify-color-warning);
+    }
+
+    .Toastify__toast-theme--colored.Toastify__toast--error {
+      color: var(--toastify-text-color-error);
+      background: var(--toastify-color-error);
+    }
+
+    .Toastify__progress-bar-theme--light {
+      background: var(--toastify-color-progress-light);
+    }
+
+    .Toastify__progress-bar-theme--dark {
+      background: var(--toastify-color-progress-dark);
+    }
+
+    .Toastify__progress-bar--info {
+      background: var(--toastify-color-progress-info);
+    }
+
+    .Toastify__progress-bar--success {
+      background: var(--toastify-color-progress-success);
+    }
+
+    .Toastify__progress-bar--warning {
+      background: var(--toastify-color-progress-warning);
+    }
+
+    .Toastify__progress-bar--error {
+      background: var(--toastify-color-progress-error);
+    }
+
+    .Toastify__progress-bar-theme--colored.Toastify__progress-bar--info,
+    .Toastify__progress-bar-theme--colored.Toastify__progress-bar--success,
+    .Toastify__progress-bar-theme--colored.Toastify__progress-bar--warning,
+    .Toastify__progress-bar-theme--colored.Toastify__progress-bar--error {
+      background: var(--toastify-color-transparent);
+    }
+
+    .Toastify__close-button {
+      color: #fff;
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      background: transparent;
+      outline: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: 0.3s ease;
+      z-index: 1;
+    }
+
+    .Toastify__toast--rtl .Toastify__close-button {
+      left: 6px;
+      right: unset;
+    }
+
+    .Toastify__close-button--light {
+      color: #000;
+      opacity: 0.3;
+    }
+
+    .Toastify__close-button>svg {
+      fill: currentColor;
+      height: 16px;
+      width: 14px;
+    }
+
+    .Toastify__close-button:hover,
+    .Toastify__close-button:focus {
+      opacity: 1;
+    }
+
+    @keyframes Toastify__trackProgress {
+      0% {
+        transform: scaleX(1);
+      }
+
+      100% {
+        transform: scaleX(0);
+      }
+    }
+
+    .Toastify__progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.7;
+      transform-origin: left;
+    }
+
+    .Toastify__progress-bar--animated {
+      animation: Toastify__trackProgress linear 1 forwards;
+    }
+
+    .Toastify__progress-bar--controlled {
+      transition: transform 0.2s;
+    }
+
+    .Toastify__progress-bar--rtl {
+      right: 0;
+      left: initial;
+      transform-origin: right;
+      border-bottom-left-radius: initial;
+    }
+
+    .Toastify__progress-bar--wrp {
+      position: absolute;
+      overflow: hidden;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      border-bottom-left-radius: var(--toastify-toast-bd-radius);
+      border-bottom-right-radius: var(--toastify-toast-bd-radius);
+    }
+
+    .Toastify__progress-bar--wrp[data-hidden='true'] {
+      opacity: 0;
+    }
+
+    .Toastify__progress-bar--bg {
+      opacity: var(--toastify-color-progress-bgo);
+      width: 100%;
+      height: 100%;
+    }
+
+    .Toastify__spinner {
+      width: 20px;
+      height: 20px;
+      box-sizing: border-box;
+      border: 2px solid;
+      border-radius: 100%;
+      border-color: var(--toastify-spinner-color-empty-area);
+      border-right-color: var(--toastify-spinner-color);
+      animation: Toastify__spin 0.65s linear infinite;
+    }
+
+    @keyframes Toastify__bounceInRight {
+
+      from,
+      60%,
+      75%,
+      90%,
+      to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+
+      from {
+        opacity: 0;
+        transform: translate3d(3000px, 0, 0);
+      }
+
+      60% {
+        opacity: 1;
+        transform: translate3d(-25px, 0, 0);
+      }
+
+      75% {
+        transform: translate3d(10px, 0, 0);
+      }
+
+      90% {
+        transform: translate3d(-5px, 0, 0);
+      }
+
+      to {
+        transform: none;
+      }
+    }
+
+    @keyframes Toastify__bounceOutRight {
+      20% {
+        opacity: 1;
+        transform: translate3d(-20px, var(--y), 0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translate3d(2000px, var(--y), 0);
+      }
+    }
+
+    @keyframes Toastify__bounceInLeft {
+
+      from,
+      60%,
+      75%,
+      90%,
+      to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+
+      0% {
+        opacity: 0;
+        transform: translate3d(-3000px, 0, 0);
+      }
+
+      60% {
+        opacity: 1;
+        transform: translate3d(25px, 0, 0);
+      }
+
+      75% {
+        transform: translate3d(-10px, 0, 0);
+      }
+
+      90% {
+        transform: translate3d(5px, 0, 0);
+      }
+
+      to {
+        transform: none;
+      }
+    }
+
+    @keyframes Toastify__bounceOutLeft {
+      20% {
+        opacity: 1;
+        transform: translate3d(20px, var(--y), 0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translate3d(-2000px, var(--y), 0);
+      }
+    }
+
+    @keyframes Toastify__bounceInUp {
+
+      from,
+      60%,
+      75%,
+      90%,
+      to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+
+      from {
+        opacity: 0;
+        transform: translate3d(0, 3000px, 0);
+      }
+
+      60% {
+        opacity: 1;
+        transform: translate3d(0, -20px, 0);
+      }
+
+      75% {
+        transform: translate3d(0, 10px, 0);
+      }
+
+      90% {
+        transform: translate3d(0, -5px, 0);
+      }
+
+      to {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    @keyframes Toastify__bounceOutUp {
+      20% {
+        transform: translate3d(0, calc(var(--y) - 10px), 0);
+      }
+
+      40%,
+      45% {
+        opacity: 1;
+        transform: translate3d(0, calc(var(--y) + 20px), 0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translate3d(0, -2000px, 0);
+      }
+    }
+
+    @keyframes Toastify__bounceInDown {
+
+      from,
+      60%,
+      75%,
+      90%,
+      to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+
+      0% {
+        opacity: 0;
+        transform: translate3d(0, -3000px, 0);
+      }
+
+      60% {
+        opacity: 1;
+        transform: translate3d(0, 25px, 0);
+      }
+
+      75% {
+        transform: translate3d(0, -10px, 0);
+      }
+
+      90% {
+        transform: translate3d(0, 5px, 0);
+      }
+
+      to {
+        transform: none;
+      }
+    }
+
+    @keyframes Toastify__bounceOutDown {
+      20% {
+        transform: translate3d(0, calc(var(--y) - 10px), 0);
+      }
+
+      40%,
+      45% {
+        opacity: 1;
+        transform: translate3d(0, calc(var(--y) + 20px), 0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translate3d(0, 2000px, 0);
+      }
+    }
+
+    .Toastify__bounce-enter--top-left,
+    .Toastify__bounce-enter--bottom-left {
+      animation-name: Toastify__bounceInLeft;
+    }
+
+    .Toastify__bounce-enter--top-right,
+    .Toastify__bounce-enter--bottom-right {
+      animation-name: Toastify__bounceInRight;
+    }
+
+    .Toastify__bounce-enter--top-center {
+      animation-name: Toastify__bounceInDown;
+    }
+
+    .Toastify__bounce-enter--bottom-center {
+      animation-name: Toastify__bounceInUp;
+    }
+
+    .Toastify__bounce-exit--top-left,
+    .Toastify__bounce-exit--bottom-left {
+      animation-name: Toastify__bounceOutLeft;
+    }
+
+    .Toastify__bounce-exit--top-right,
+    .Toastify__bounce-exit--bottom-right {
+      animation-name: Toastify__bounceOutRight;
+    }
+
+    .Toastify__bounce-exit--top-center {
+      animation-name: Toastify__bounceOutUp;
+    }
+
+    .Toastify__bounce-exit--bottom-center {
+      animation-name: Toastify__bounceOutDown;
+    }
+
+    @keyframes Toastify__zoomIn {
+      from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes Toastify__zoomOut {
+      from {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+        transform: translate3d(0, var(--y), 0) scale3d(0.3, 0.3, 0.3);
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+
+    .Toastify__zoom-enter {
+      animation-name: Toastify__zoomIn;
+    }
+
+    .Toastify__zoom-exit {
+      animation-name: Toastify__zoomOut;
+    }
+
+    @keyframes Toastify__flipIn {
+      from {
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+      }
+
+      40% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        animation-timing-function: ease-in;
+      }
+
+      60% {
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+      }
+
+      80% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+      }
+
+      to {
+        transform: perspective(400px);
+      }
+    }
+
+    @keyframes Toastify__flipOut {
+      from {
+        transform: translate3d(0, var(--y), 0) perspective(400px);
+      }
+
+      30% {
+        transform: translate3d(0, var(--y), 0) perspective(400px) rotate3d(1, 0, 0, -20deg);
+        opacity: 1;
+      }
+
+      to {
+        transform: translate3d(0, var(--y), 0) perspective(400px) rotate3d(1, 0, 0, 90deg);
+        opacity: 0;
+      }
+    }
+
+    .Toastify__flip-enter {
+      animation-name: Toastify__flipIn;
+    }
+
+    .Toastify__flip-exit {
+      animation-name: Toastify__flipOut;
+    }
+
+    @keyframes Toastify__slideInRight {
+      from {
+        transform: translate3d(110%, 0, 0);
+        visibility: visible;
+      }
+
+      to {
+        transform: translate3d(0, var(--y), 0);
+      }
+    }
+
+    @keyframes Toastify__slideInLeft {
+      from {
+        transform: translate3d(-110%, 0, 0);
+        visibility: visible;
+      }
+
+      to {
+        transform: translate3d(0, var(--y), 0);
+      }
+    }
+
+    @keyframes Toastify__slideInUp {
+      from {
+        transform: translate3d(0, 110%, 0);
+        visibility: visible;
+      }
+
+      to {
+        transform: translate3d(0, var(--y), 0);
+      }
+    }
+
+    @keyframes Toastify__slideInDown {
+      from {
+        transform: translate3d(0, -110%, 0);
+        visibility: visible;
+      }
+
+      to {
+        transform: translate3d(0, var(--y), 0);
+      }
+    }
+
+    @keyframes Toastify__slideOutRight {
+      from {
+        transform: translate3d(0, var(--y), 0);
+      }
+
+      to {
+        visibility: hidden;
+        transform: translate3d(110%, var(--y), 0);
+      }
+    }
+
+    @keyframes Toastify__slideOutLeft {
+      from {
+        transform: translate3d(0, var(--y), 0);
+      }
+
+      to {
+        visibility: hidden;
+        transform: translate3d(-110%, var(--y), 0);
+      }
+    }
+
+    @keyframes Toastify__slideOutDown {
+      from {
+        transform: translate3d(0, var(--y), 0);
+      }
+
+      to {
+        visibility: hidden;
+        transform: translate3d(0, 500px, 0);
+      }
+    }
+
+    @keyframes Toastify__slideOutUp {
+      from {
+        transform: translate3d(0, var(--y), 0);
+      }
+
+      to {
+        visibility: hidden;
+        transform: translate3d(0, -500px, 0);
+      }
+    }
+
+    .Toastify__slide-enter--top-left,
+    .Toastify__slide-enter--bottom-left {
+      animation-name: Toastify__slideInLeft;
+    }
+
+    .Toastify__slide-enter--top-right,
+    .Toastify__slide-enter--bottom-right {
+      animation-name: Toastify__slideInRight;
+    }
+
+    .Toastify__slide-enter--top-center {
+      animation-name: Toastify__slideInDown;
+    }
+
+    .Toastify__slide-enter--bottom-center {
+      animation-name: Toastify__slideInUp;
+    }
+
+    .Toastify__slide-exit--top-left,
+    .Toastify__slide-exit--bottom-left {
+      animation-name: Toastify__slideOutLeft;
+      animation-timing-function: ease-in;
+      animation-duration: 0.3s;
+    }
+
+    .Toastify__slide-exit--top-right,
+    .Toastify__slide-exit--bottom-right {
+      animation-name: Toastify__slideOutRight;
+      animation-timing-function: ease-in;
+      animation-duration: 0.3s;
+    }
+
+    .Toastify__slide-exit--top-center {
+      animation-name: Toastify__slideOutUp;
+      animation-timing-function: ease-in;
+      animation-duration: 0.3s;
+    }
+
+    .Toastify__slide-exit--bottom-center {
+      animation-name: Toastify__slideOutDown;
+      animation-timing-function: ease-in;
+      animation-duration: 0.3s;
+    }
+
+    @keyframes Toastify__spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <style type="text/css" data-vite-dev-id="F:/Drainer/react/dragon-fly-builder/src/index.css">
+    *,
+    ::before,
+    ::after {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia: ;
+      --tw-contain-size: ;
+      --tw-contain-layout: ;
+      --tw-contain-paint: ;
+      --tw-contain-style: ;
+    }
+
+    ::backdrop {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia: ;
+      --tw-contain-size: ;
+      --tw-contain-layout: ;
+      --tw-contain-paint: ;
+      --tw-contain-style: ;
+    }
+
+    /*
+! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
+*/
+    /*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+    *,
+    ::before,
+    ::after {
+      box-sizing: border-box;
+      /* 1 */
+      border-width: 0;
+      /* 2 */
+      border-style: solid;
+      /* 2 */
+      border-color: #e5e7eb;
+      /* 2 */
+    }
+
+    ::before,
+    ::after {
+      --tw-content: '';
+    }
+
+    /*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+    html,
+    :host {
+      line-height: 1.5;
+      /* 1 */
+      -webkit-text-size-adjust: 100%;
+      /* 2 */
+      -moz-tab-size: 4;
+      /* 3 */
+      -o-tab-size: 4;
+      tab-size: 4;
+      /* 3 */
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      /* 4 */
+      font-feature-settings: normal;
+      /* 5 */
+      font-variation-settings: normal;
+      /* 6 */
+      -webkit-tap-highlight-color: transparent;
+      /* 7 */
+    }
+
+    /*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+    body {
+      margin: 0;
+      /* 1 */
+      line-height: inherit;
+      /* 2 */
+    }
+
+    /*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+    hr {
+      height: 0;
+      /* 1 */
+      color: inherit;
+      /* 2 */
+      border-top-width: 1px;
+      /* 3 */
+    }
+
+    /*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+    abbr:where([title]) {
+      -webkit-text-decoration: underline dotted;
+      text-decoration: underline dotted;
+    }
+
+    /*
+Remove the default font size and weight for headings.
+*/
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+
+    /*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    /*
+Add the correct font weight in Edge and Safari.
+*/
+
+    b,
+    strong {
+      font-weight: bolder;
+    }
+
+    /*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+    code,
+    kbd,
+    samp,
+    pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      /* 1 */
+      font-feature-settings: normal;
+      /* 2 */
+      font-variation-settings: normal;
+      /* 3 */
+      font-size: 1em;
+      /* 4 */
+    }
+
+    /*
+Add the correct font size in all browsers.
+*/
+
+    small {
+      font-size: 80%;
+    }
+
+    /*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    sub {
+      bottom: -0.25em;
+    }
+
+    sup {
+      top: -0.5em;
+    }
+
+    /*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+    table {
+      text-indent: 0;
+      /* 1 */
+      border-color: inherit;
+      /* 2 */
+      border-collapse: collapse;
+      /* 3 */
+    }
+
+    /*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      /* 1 */
+      font-feature-settings: inherit;
+      /* 1 */
+      font-variation-settings: inherit;
+      /* 1 */
+      font-size: 100%;
+      /* 1 */
+      font-weight: inherit;
+      /* 1 */
+      line-height: inherit;
+      /* 1 */
+      letter-spacing: inherit;
+      /* 1 */
+      color: inherit;
+      /* 1 */
+      margin: 0;
+      /* 2 */
+      padding: 0;
+      /* 3 */
+    }
+
+    /*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    /*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+    button,
+    input:where([type='button']),
+    input:where([type='reset']),
+    input:where([type='submit']) {
+      -webkit-appearance: button;
+      /* 1 */
+      background-color: transparent;
+      /* 2 */
+      background-image: none;
+      /* 2 */
+    }
+
+    /*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+    :-moz-focusring {
+      outline: auto;
+    }
+
+    /*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+    :-moz-ui-invalid {
+      box-shadow: none;
+    }
+
+    /*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+    progress {
+      vertical-align: baseline;
+    }
+
+    /*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      height: auto;
+    }
+
+    /*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+    [type='search'] {
+      -webkit-appearance: textfield;
+      /* 1 */
+      outline-offset: -2px;
+      /* 2 */
+    }
+
+    /*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+    ::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    /*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      /* 1 */
+      font: inherit;
+      /* 2 */
+    }
+
+    /*
+Add the correct display in Chrome and Safari.
+*/
+
+    summary {
+      display: list-item;
+    }
+
+    /*
+Removes the default spacing and border for appropriate elements.
+*/
+
+    blockquote,
+    dl,
+    dd,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    figure,
+    p,
+    pre {
+      margin: 0;
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0;
+    }
+
+    legend {
+      padding: 0;
+    }
+
+    ol,
+    ul,
+    menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /*
+Reset default styling for dialogs.
+*/
+    dialog {
+      padding: 0;
+    }
+
+    /*
+Prevent resizing textareas horizontally by default.
+*/
+
+    textarea {
+      resize: vertical;
+    }
+
+    /*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+      opacity: 1;
+      /* 1 */
+      color: #9ca3af;
+      /* 2 */
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      opacity: 1;
+      /* 1 */
+      color: #9ca3af;
+      /* 2 */
+    }
+
+    /*
+Set the default cursor for buttons.
+*/
+
+    button,
+    [role="button"] {
+      cursor: pointer;
+    }
+
+    /*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+    :disabled {
+      cursor: default;
+    }
+
+    /*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+    img,
+    svg,
+    video,
+    canvas,
+    audio,
+    iframe,
+    embed,
+    object {
+      display: block;
+      /* 1 */
+      vertical-align: middle;
+      /* 2 */
+    }
+
+    /*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Make elements with the HTML hidden attribute stay hidden by default */
+    [hidden]:where(:not([hidden="until-found"])) {
+      display: none;
+    }
+
+    .fixed {
+      position: fixed;
+    }
+
+    .inset-0 {
+      inset: 0px;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .my-3 {
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .min-h-screen {
+      min-height: 100vh;
+    }
+
+    .w-1\/2 {
+      width: 50%;
+    }
+
+    .w-\[80\%\] {
+      width: 80%;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .gap-2 {
+      gap: 0.5rem;
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    .gap-6 {
+      gap: 1.5rem;
+    }
+
+    .rounded-2xl {
+      border-radius: 1rem;
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+
+    .border-t-4 {
+      border-top-width: 4px;
+    }
+
+    .bg-black {
+      --tw-bg-opacity: 1;
+      background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-blue-600 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-gray-600 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-gray-700 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-gray-800 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-gray-900 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-transparent {
+      background-color: transparent;
+    }
+
+    .bg-opacity-75 {
+      --tw-bg-opacity: 0.75;
+    }
+
+    .p-4 {
+      padding: 1rem;
+    }
+
+    .p-6 {
+      padding: 1.5rem;
+    }
+
+    .px-3 {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .font-medium {
+      font-weight: 500;
+    }
+
+    .font-semibold {
+      font-weight: 600;
+    }
+
+    .text-gray-400 {
+      --tw-text-opacity: 1;
+      color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+    }
+
+    .text-white {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+    }
+
+    .shadow-lg {
+      --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+
+    .transition-colors {
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+
+    .hover\:bg-blue-700:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
+    }
+
+    .focus\:outline-none:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+
+    @media (min-width: 640px) {
+
+      .sm\:w-\[329px\] {
+        width: 329px;
+      }
+    }
+
+    @media (min-width: 768px) {
+
+      .md\:w-\[429px\] {
+        width: 429px;
+      }
+
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    @keyframes w3m-shake {
+      0% {
+        transform: scale(1) rotate(0deg);
+      }
+
+      20% {
+        transform: scale(1) rotate(-1deg);
+      }
+
+      40% {
+        transform: scale(1) rotate(1.5deg);
+      }
+
+      60% {
+        transform: scale(1) rotate(-1.5deg);
+      }
+
+      80% {
+        transform: scale(1) rotate(1deg);
+      }
+
+      100% {
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    @keyframes w3m-iframe-fade-out {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes w3m-iframe-zoom-in {
+      0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes w3m-iframe-zoom-in-mobile {
+      0% {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    :root {
+      --w3m-modal-width: 360px;
+      --w3m-color-mix-strength: 0%;
+      --w3m-font-family: Inter, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      ;
+      --w3m-font-size-master: 10px;
+      --w3m-border-radius-master: 4px;
+      --w3m-z-index: 999;
+
+      --wui-font-family: var(--w3m-font-family);
+
+      --wui-font-size-mini: calc(var(--w3m-font-size-master) * 0.8);
+      --wui-font-size-micro: var(--w3m-font-size-master);
+      --wui-font-size-tiny: calc(var(--w3m-font-size-master) * 1.2);
+      --wui-font-size-small: calc(var(--w3m-font-size-master) * 1.4);
+      --wui-font-size-paragraph: calc(var(--w3m-font-size-master) * 1.6);
+      --wui-font-size-medium: calc(var(--w3m-font-size-master) * 1.8);
+      --wui-font-size-large: calc(var(--w3m-font-size-master) * 2);
+      --wui-font-size-title-6: calc(var(--w3m-font-size-master) * 2.2);
+      --wui-font-size-medium-title: calc(var(--w3m-font-size-master) * 2.4);
+      --wui-font-size-2xl: calc(var(--w3m-font-size-master) * 4);
+
+      --wui-border-radius-5xs: var(--w3m-border-radius-master);
+      --wui-border-radius-4xs: calc(var(--w3m-border-radius-master) * 1.5);
+      --wui-border-radius-3xs: calc(var(--w3m-border-radius-master) * 2);
+      --wui-border-radius-xxs: calc(var(--w3m-border-radius-master) * 3);
+      --wui-border-radius-xs: calc(var(--w3m-border-radius-master) * 4);
+      --wui-border-radius-s: calc(var(--w3m-border-radius-master) * 5);
+      --wui-border-radius-m: calc(var(--w3m-border-radius-master) * 7);
+      --wui-border-radius-l: calc(var(--w3m-border-radius-master) * 9);
+      --wui-border-radius-3xl: calc(var(--w3m-border-radius-master) * 20);
+
+      --wui-font-weight-light: 400;
+      --wui-font-weight-regular: 500;
+      --wui-font-weight-medium: 600;
+      --wui-font-weight-bold: 700;
+
+      --wui-letter-spacing-2xl: -1.6px;
+      --wui-letter-spacing-medium-title: -0.96px;
+      --wui-letter-spacing-title-6: -0.88px;
+      --wui-letter-spacing-large: -0.8px;
+      --wui-letter-spacing-medium: -0.72px;
+      --wui-letter-spacing-paragraph: -0.64px;
+      --wui-letter-spacing-small: -0.56px;
+      --wui-letter-spacing-tiny: -0.48px;
+      --wui-letter-spacing-micro: -0.2px;
+      --wui-letter-spacing-mini: -0.16px;
+
+      --wui-spacing-0: 0px;
+      --wui-spacing-4xs: 2px;
+      --wui-spacing-3xs: 4px;
+      --wui-spacing-xxs: 6px;
+      --wui-spacing-2xs: 7px;
+      --wui-spacing-xs: 8px;
+      --wui-spacing-1xs: 10px;
+      --wui-spacing-s: 12px;
+      --wui-spacing-m: 14px;
+      --wui-spacing-l: 16px;
+      --wui-spacing-2l: 18px;
+      --wui-spacing-xl: 20px;
+      --wui-spacing-xxl: 24px;
+      --wui-spacing-2xl: 32px;
+      --wui-spacing-3xl: 40px;
+      --wui-spacing-4xl: 90px;
+      --wui-spacing-5xl: 95px;
+
+      --wui-icon-box-size-xxs: 14px;
+      --wui-icon-box-size-xs: 20px;
+      --wui-icon-box-size-sm: 24px;
+      --wui-icon-box-size-md: 32px;
+      --wui-icon-box-size-mdl: 36px;
+      --wui-icon-box-size-lg: 40px;
+      --wui-icon-box-size-2lg: 48px;
+      --wui-icon-box-size-xl: 64px;
+
+      --wui-icon-size-inherit: inherit;
+      --wui-icon-size-xxs: 10px;
+      --wui-icon-size-xs: 12px;
+      --wui-icon-size-sm: 14px;
+      --wui-icon-size-md: 16px;
+      --wui-icon-size-mdl: 18px;
+      --wui-icon-size-lg: 20px;
+      --wui-icon-size-xl: 24px;
+      --wui-icon-size-xxl: 28px;
+
+      --wui-wallet-image-size-inherit: inherit;
+      --wui-wallet-image-size-sm: 40px;
+      --wui-wallet-image-size-md: 56px;
+      --wui-wallet-image-size-lg: 80px;
+
+      --wui-visual-size-size-inherit: inherit;
+      --wui-visual-size-sm: 40px;
+      --wui-visual-size-md: 55px;
+      --wui-visual-size-lg: 80px;
+
+      --wui-box-size-md: 100px;
+      --wui-box-size-lg: 120px;
+
+      --wui-ease-out-power-2: cubic-bezier(0, 0, 0.22, 1);
+      --wui-ease-out-power-1: cubic-bezier(0, 0, 0.55, 1);
+
+      --wui-ease-in-power-3: cubic-bezier(0.66, 0, 1, 1);
+      --wui-ease-in-power-2: cubic-bezier(0.45, 0, 1, 1);
+      --wui-ease-in-power-1: cubic-bezier(0.3, 0, 1, 1);
+
+      --wui-ease-inout-power-1: cubic-bezier(0.45, 0, 0.55, 1);
+
+      --wui-duration-lg: 200ms;
+      --wui-duration-md: 125ms;
+      --wui-duration-sm: 75ms;
+
+      --wui-path-network-sm: path('M15.4 2.1a5.21 5.21 0 0 1 5.2 0l11.61 6.7a5.21 5.21 0 0 1 2.61 4.52v13.4c0 1.87-1 3.59-2.6 4.52l-11.61 6.7c-1.62.93-3.6.93-5.22 0l-11.6-6.7a5.21 5.21 0 0 1-2.61-4.51v-13.4c0-1.87 1-3.6 2.6-4.52L15.4 2.1Z'
+        );
+
+      --wui-path-network-md: path('M43.4605 10.7248L28.0485 1.61089C25.5438 0.129705 22.4562 0.129705 19.9515 1.61088L4.53951 10.7248C2.03626 12.2051 0.5 14.9365 0.5 17.886V36.1139C0.5 39.0635 2.03626 41.7949 4.53951 43.2752L19.9515 52.3891C22.4562 53.8703 25.5438 53.8703 28.0485 52.3891L43.4605 43.2752C45.9637 41.7949 47.5 39.0635 47.5 36.114V17.8861C47.5 14.9365 45.9637 12.2051 43.4605 10.7248Z'
+        );
+
+      --wui-path-network-lg: path('M78.3244 18.926L50.1808 2.45078C45.7376 -0.150261 40.2624 -0.150262 35.8192 2.45078L7.6756 18.926C3.23322 21.5266 0.5 26.3301 0.5 31.5248V64.4752C0.5 69.6699 3.23322 74.4734 7.6756 77.074L35.8192 93.5492C40.2624 96.1503 45.7376 96.1503 50.1808 93.5492L78.3244 77.074C82.7668 74.4734 85.5 69.6699 85.5 64.4752V31.5248C85.5 26.3301 82.7668 21.5266 78.3244 18.926Z'
+        );
+
+      --wui-width-network-sm: 36px;
+      --wui-width-network-md: 48px;
+      --wui-width-network-lg: 86px;
+
+      --wui-height-network-sm: 40px;
+      --wui-height-network-md: 54px;
+      --wui-height-network-lg: 96px;
+
+      --wui-icon-size-network-xs: 12px;
+      --wui-icon-size-network-sm: 16px;
+      --wui-icon-size-network-md: 24px;
+      --wui-icon-size-network-lg: 42px;
+
+      --wui-color-inherit: inherit;
+
+      --wui-color-inverse-100: #fff;
+      --wui-color-inverse-000: #000;
+
+      --wui-cover: rgba(20, 20, 20, 0.8);
+
+      --wui-color-modal-bg: var(--wui-color-modal-bg-base);
+
+      --wui-color-accent-100: var(--wui-color-accent-base-100);
+      --wui-color-accent-090: var(--wui-color-accent-base-090);
+      --wui-color-accent-080: var(--wui-color-accent-base-080);
+
+      --wui-color-success-100: var(--wui-color-success-base-100);
+      --wui-color-success-125: var(--wui-color-success-base-125);
+
+      --wui-color-warning-100: var(--wui-color-warning-base-100);
+
+      --wui-color-error-100: var(--wui-color-error-base-100);
+      --wui-color-error-125: var(--wui-color-error-base-125);
+
+      --wui-color-blue-100: var(--wui-color-blue-base-100);
+      --wui-color-blue-90: var(--wui-color-blue-base-90);
+
+      --wui-icon-box-bg-error-100: var(--wui-icon-box-bg-error-base-100);
+      --wui-icon-box-bg-blue-100: var(--wui-icon-box-bg-blue-base-100);
+      --wui-icon-box-bg-success-100: var(--wui-icon-box-bg-success-base-100);
+      --wui-icon-box-bg-inverse-100: var(--wui-icon-box-bg-inverse-base-100);
+
+      --wui-all-wallets-bg-100: var(--wui-all-wallets-bg-100);
+
+      --wui-avatar-border: var(--wui-avatar-border-base);
+
+      --wui-thumbnail-border: var(--wui-thumbnail-border-base);
+
+      --wui-wallet-button-bg: var(--wui-wallet-button-bg-base);
+
+      --wui-box-shadow-blue: var(--wui-color-accent-glass-020);
+    }
+
+    @supports (background: color-mix(in srgb, white 50%, black)) {
+      :root {
+        --wui-color-modal-bg: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-modal-bg-base));
+
+        --wui-box-shadow-blue: color-mix(in srgb, var(--wui-color-accent-100) 20%, transparent);
+
+        --wui-color-accent-100: color-mix(in srgb,
+            var(--wui-color-accent-base-100) 100%,
+            transparent);
+        --wui-color-accent-090: color-mix(in srgb,
+            var(--wui-color-accent-base-100) 90%,
+            transparent);
+        --wui-color-accent-080: color-mix(in srgb,
+            var(--wui-color-accent-base-100) 80%,
+            transparent);
+        --wui-color-accent-glass-090: color-mix(in srgb,
+            var(--wui-color-accent-base-100) 90%,
+            transparent);
+        --wui-color-accent-glass-080: color-mix(in srgb,
+            var(--wui-color-accent-base-100) 80%,
+            transparent);
+        --wui-color-accent-glass-020: color-mix(in srgb,
+            var(--wui-color-accent-base-100) 20%,
+            transparent);
+        --wui-color-accent-glass-015: color-mix(in srgb,
+            var(--wui-color-accent-base-100) 15%,
+            transparent);
+        --wui-color-accent-glass-010: color-mix(in srgb,
+            var(--wui-color-accent-base-100) 10%,
+            transparent);
+        --wui-color-accent-glass-005: color-mix(in srgb,
+            var(--wui-color-accent-base-100) 5%,
+            transparent);
+        --wui-color-accent-002: color-mix(in srgb,
+            var(--wui-color-accent-base-100) 2%,
+            transparent);
+
+        --wui-color-fg-100: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-100));
+        --wui-color-fg-125: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-125));
+        --wui-color-fg-150: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-150));
+        --wui-color-fg-175: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-175));
+        --wui-color-fg-200: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-200));
+        --wui-color-fg-225: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-225));
+        --wui-color-fg-250: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-250));
+        --wui-color-fg-275: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-275));
+        --wui-color-fg-300: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-300));
+        --wui-color-fg-325: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-325));
+        --wui-color-fg-350: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-350));
+
+        --wui-color-bg-100: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-100));
+        --wui-color-bg-125: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-125));
+        --wui-color-bg-150: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-150));
+        --wui-color-bg-175: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-175));
+        --wui-color-bg-200: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-200));
+        --wui-color-bg-225: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-225));
+        --wui-color-bg-250: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-250));
+        --wui-color-bg-275: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-275));
+        --wui-color-bg-300: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-300));
+        --wui-color-bg-325: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-325));
+        --wui-color-bg-350: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-350));
+
+        --wui-color-success-100: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-success-base-100));
+        --wui-color-success-125: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-success-base-125));
+
+        --wui-color-warning-100: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-warning-base-100));
+
+        --wui-color-error-100: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-error-base-100));
+        --wui-color-blue-100: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-blue-base-100));
+        --wui-color-blue-90: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-blue-base-90));
+        --wui-color-error-125: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-error-base-125));
+
+        --wui-icon-box-bg-error-100: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-error-base-100));
+        --wui-icon-box-bg-accent-100: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-blue-base-100));
+        --wui-icon-box-bg-success-100: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-success-base-100));
+        --wui-icon-box-bg-inverse-100: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-inverse-base-100));
+
+        --wui-all-wallets-bg-100: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-all-wallets-bg-100));
+
+        --wui-avatar-border: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-avatar-border-base));
+
+        --wui-thumbnail-border: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-thumbnail-border-base));
+
+        --wui-wallet-button-bg: color-mix(in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-wallet-button-bg-base));
+      }
+    }
+  </style>
+  <style media="enabled">
+    :root {
+      --w3m-color-mix: #000;
+      --w3m-accent: hsla(231, 100%, 70%, 1);
+      --w3m-default: #000;
+
+      --wui-color-modal-bg-base: #fff;
+      --wui-color-accent-base-100: var(--w3m-accent);
+
+      --wui-color-blueberry-100: hsla(231, 100%, 70%, 1);
+      --wui-color-blueberry-090: hsla(231, 97%, 72%, 1);
+      --wui-color-blueberry-080: hsla(231, 92%, 74%, 1);
+
+      --wui-color-fg-100: #141414;
+      --wui-color-fg-125: #2d3131;
+      --wui-color-fg-150: #474d4d;
+      --wui-color-fg-175: #636d6d;
+      --wui-color-fg-200: #798686;
+      --wui-color-fg-225: #828f8f;
+      --wui-color-fg-250: #8b9797;
+      --wui-color-fg-275: #95a0a0;
+      --wui-color-fg-300: #9ea9a9;
+      --wui-color-fg-325: #9a9a9a;
+      --wui-color-fg-350: #d0d0d0;
+
+      --wui-color-bg-100: #ffffff;
+      --wui-color-bg-125: #f5fafa;
+      --wui-color-bg-150: #f3f8f8;
+      --wui-color-bg-175: #eef4f4;
+      --wui-color-bg-200: #eaf1f1;
+      --wui-color-bg-225: #e5eded;
+      --wui-color-bg-250: #e1e9e9;
+      --wui-color-bg-275: #dce7e7;
+      --wui-color-bg-300: #d8e3e3;
+      --wui-color-bg-325: #f3f3f3;
+      --wui-color-bg-350: #202020;
+
+      --wui-color-success-base-100: #26b562;
+      --wui-color-success-base-125: #30a46b;
+
+      --wui-color-warning-base-100: #f3a13f;
+
+      --wui-color-error-base-100: #f05142;
+      --wui-color-error-base-125: #df4a34;
+
+      --wui-color-blue-base-100: rgb(149, 153, 179);
+      --wui-color-blue-base-90: rgba(169, 172, 192, 0.9);
+
+      --wui-color-success-glass-001: rgba(38, 181, 98, 0.01);
+      --wui-color-success-glass-002: rgba(38, 181, 98, 0.02);
+      --wui-color-success-glass-005: rgba(38, 181, 98, 0.05);
+      --wui-color-success-glass-010: rgba(38, 181, 98, 0.1);
+      --wui-color-success-glass-015: rgba(38, 181, 98, 0.15);
+      --wui-color-success-glass-020: rgba(38, 181, 98, 0.2);
+      --wui-color-success-glass-025: rgba(38, 181, 98, 0.25);
+      --wui-color-success-glass-030: rgba(38, 181, 98, 0.3);
+      --wui-color-success-glass-060: rgba(38, 181, 98, 0.6);
+      --wui-color-success-glass-080: rgba(38, 181, 98, 0.8);
+
+      --wui-color-success-glass-reown-020: rgba(48, 164, 107, 0.2);
+
+      --wui-color-warning-glass-reown-020: rgba(243, 161, 63, 0.2);
+
+      --wui-color-error-glass-001: rgba(240, 81, 66, 0.01);
+      --wui-color-error-glass-002: rgba(240, 81, 66, 0.02);
+      --wui-color-error-glass-005: rgba(240, 81, 66, 0.05);
+      --wui-color-error-glass-010: rgba(240, 81, 66, 0.1);
+      --wui-color-error-glass-015: rgba(240, 81, 66, 0.15);
+      --wui-color-error-glass-020: rgba(240, 81, 66, 0.2);
+      --wui-color-error-glass-025: rgba(240, 81, 66, 0.25);
+      --wui-color-error-glass-030: rgba(240, 81, 66, 0.3);
+      --wui-color-error-glass-060: rgba(240, 81, 66, 0.6);
+      --wui-color-error-glass-080: rgba(240, 81, 66, 0.8);
+
+      --wui-color-error-glass-reown-020: rgba(223, 74, 52, 0.2);
+
+      --wui-icon-box-bg-error-base-100: #f4dfdd;
+      --wui-icon-box-bg-blue-base-100: #d9ecfb;
+      --wui-icon-box-bg-success-base-100: #daf0e4;
+      --wui-icon-box-bg-inverse-base-100: #dcecfc;
+
+      --wui-all-wallets-bg-100: #e8f1fa;
+
+      --wui-avatar-border-base: #f3f4f4;
+
+      --wui-thumbnail-border-base: #eaefef;
+
+      --wui-wallet-button-bg-base: var(--wui-color-bg-125);
+
+      --wui-color-gray-glass-001: rgba(0, 0, 0, 0.01);
+      --wui-color-gray-glass-002: rgba(0, 0, 0, 0.02);
+      --wui-color-gray-glass-005: rgba(0, 0, 0, 0.05);
+      --wui-color-gray-glass-010: rgba(0, 0, 0, 0.1);
+      --wui-color-gray-glass-015: rgba(0, 0, 0, 0.15);
+      --wui-color-gray-glass-020: rgba(0, 0, 0, 0.2);
+      --wui-color-gray-glass-025: rgba(0, 0, 0, 0.25);
+      --wui-color-gray-glass-030: rgba(0, 0, 0, 0.3);
+      --wui-color-gray-glass-060: rgba(0, 0, 0, 0.6);
+      --wui-color-gray-glass-080: rgba(0, 0, 0, 0.8);
+      --wui-color-gray-glass-090: rgba(0, 0, 0, 0.9);
+
+      --wui-color-dark-glass-100: rgba(233, 233, 233, 1);
+
+      --w3m-card-embedded-shadow-color: rgb(224 225 233 / 25%);
+    }
+  </style>
+  <style>
+    :root {
+      --w3m-color-mix: #fff;
+      --w3m-accent: hsla(230, 100%, 67%, 1);
+      --w3m-default: #fff;
+
+      --wui-color-modal-bg-base: #121313;
+      --wui-color-accent-base-100: var(--w3m-accent);
+
+      --wui-color-blueberry-100: hsla(230, 100%, 67%, 1);
+      --wui-color-blueberry-090: hsla(231, 76%, 61%, 1);
+      --wui-color-blueberry-080: hsla(230, 59%, 55%, 1);
+      --wui-color-blueberry-050: hsla(231, 100%, 70%, 0.1);
+
+      --wui-color-fg-100: #e4e7e7;
+      --wui-color-fg-125: #d0d5d5;
+      --wui-color-fg-150: #a8b1b1;
+      --wui-color-fg-175: #a8b0b0;
+      --wui-color-fg-200: #949e9e;
+      --wui-color-fg-225: #868f8f;
+      --wui-color-fg-250: #788080;
+      --wui-color-fg-275: #788181;
+      --wui-color-fg-300: #6e7777;
+      --wui-color-fg-325: #9a9a9a;
+      --wui-color-fg-350: #363636;
+
+      --wui-color-bg-100: #141414;
+      --wui-color-bg-125: #191a1a;
+      --wui-color-bg-150: #1e1f1f;
+      --wui-color-bg-175: #222525;
+      --wui-color-bg-200: #272a2a;
+      --wui-color-bg-225: #2c3030;
+      --wui-color-bg-250: #313535;
+      --wui-color-bg-275: #363b3b;
+      --wui-color-bg-300: #3b4040;
+      --wui-color-bg-325: #252525;
+      --wui-color-bg-350: #ffffff;
+
+      --wui-color-success-base-100: #26d962;
+      --wui-color-success-base-125: #30a46b;
+
+      --wui-color-warning-base-100: #f3a13f;
+
+      --wui-color-error-base-100: #f25a67;
+      --wui-color-error-base-125: #df4a34;
+
+      --wui-color-blue-base-100: rgba(102, 125, 255, 1);
+      --wui-color-blue-base-90: rgba(102, 125, 255, 0.9);
+
+      --wui-color-success-glass-001: rgba(38, 217, 98, 0.01);
+      --wui-color-success-glass-002: rgba(38, 217, 98, 0.02);
+      --wui-color-success-glass-005: rgba(38, 217, 98, 0.05);
+      --wui-color-success-glass-010: rgba(38, 217, 98, 0.1);
+      --wui-color-success-glass-015: rgba(38, 217, 98, 0.15);
+      --wui-color-success-glass-020: rgba(38, 217, 98, 0.2);
+      --wui-color-success-glass-025: rgba(38, 217, 98, 0.25);
+      --wui-color-success-glass-030: rgba(38, 217, 98, 0.3);
+      --wui-color-success-glass-060: rgba(38, 217, 98, 0.6);
+      --wui-color-success-glass-080: rgba(38, 217, 98, 0.8);
+
+      --wui-color-success-glass-reown-020: rgba(48, 164, 107, 0.2);
+
+      --wui-color-warning-glass-reown-020: rgba(243, 161, 63, 0.2);
+
+      --wui-color-error-glass-001: rgba(242, 90, 103, 0.01);
+      --wui-color-error-glass-002: rgba(242, 90, 103, 0.02);
+      --wui-color-error-glass-005: rgba(242, 90, 103, 0.05);
+      --wui-color-error-glass-010: rgba(242, 90, 103, 0.1);
+      --wui-color-error-glass-015: rgba(242, 90, 103, 0.15);
+      --wui-color-error-glass-020: rgba(242, 90, 103, 0.2);
+      --wui-color-error-glass-025: rgba(242, 90, 103, 0.25);
+      --wui-color-error-glass-030: rgba(242, 90, 103, 0.3);
+      --wui-color-error-glass-060: rgba(242, 90, 103, 0.6);
+      --wui-color-error-glass-080: rgba(242, 90, 103, 0.8);
+
+      --wui-color-error-glass-reown-020: rgba(223, 74, 52, 0.2);
+
+      --wui-color-gray-glass-001: rgba(255, 255, 255, 0.01);
+      --wui-color-gray-glass-002: rgba(255, 255, 255, 0.02);
+      --wui-color-gray-glass-005: rgba(255, 255, 255, 0.05);
+      --wui-color-gray-glass-010: rgba(255, 255, 255, 0.1);
+      --wui-color-gray-glass-015: rgba(255, 255, 255, 0.15);
+      --wui-color-gray-glass-020: rgba(255, 255, 255, 0.2);
+      --wui-color-gray-glass-025: rgba(255, 255, 255, 0.25);
+      --wui-color-gray-glass-030: rgba(255, 255, 255, 0.3);
+      --wui-color-gray-glass-060: rgba(255, 255, 255, 0.6);
+      --wui-color-gray-glass-080: rgba(255, 255, 255, 0.8);
+      --wui-color-gray-glass-090: rgba(255, 255, 255, 0.9);
+
+      --wui-color-dark-glass-100: rgba(42, 42, 42, 1);
+
+      --wui-icon-box-bg-error-base-100: #3c2426;
+      --wui-icon-box-bg-blue-base-100: #20303f;
+      --wui-icon-box-bg-success-base-100: #1f3a28;
+      --wui-icon-box-bg-inverse-base-100: #243240;
+
+      --wui-all-wallets-bg-100: #222b35;
+
+      --wui-avatar-border-base: #252525;
+
+      --wui-thumbnail-border-base: #252525;
+
+      --wui-wallet-button-bg-base: var(--wui-color-bg-125);
+
+      --w3m-card-embedded-shadow-color: rgb(17 17 18 / 25%);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gray-900 text-white p-6">
+  <!-- Header -->
+  <header class="flex justify-between items-center mb-8">
+    <h1 class="text-2xl font-bold">DeFi Protocol</h1>
+    <button class="connect-wallet bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-medium transition-colors">
+      Connect Wallet
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Swap Card -->
+    <div class="bg-gray-800 p-6 rounded-xl">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-semibold">Swap</h2>
+      </div>
+
+      <!-- From Token -->
+      <div class="bg-gray-700 p-4 rounded-lg mb-4">
+        <div class="flex justify-between mb-2">
+          <span class="text-gray-400">From</span>
+          <span class="text-gray-400">Balance: 0.00</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <input type="number" placeholder="0.0" class="bg-transparent text-2xl w-1/2 focus:outline-none">
+          <button class="flex items-center gap-2 bg-gray-600 px-3 py-2 rounded-lg">
+            ETH ▼
+          </button>
+        </div>
+      </div>
+
+      <!-- To Token -->
+      <div class="bg-gray-700 p-4 rounded-lg mb-6">
+        <div class="flex justify-between mb-2">
+          <span class="text-gray-400">To</span>
+          <span class="text-gray-400">Balance: 0.00</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <input type="number" placeholder="0.0" class="bg-transparent text-2xl w-1/2 focus:outline-none">
+          <button class="flex items-center gap-2 bg-gray-600 px-3 py-2 rounded-lg">
+            USDC ▼
+          </button>
+        </div>
+      </div>
+
+      <button class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-medium transition-colors">
+        Swap
+      </button>
+    </div>
+
+    <!-- Stats Card -->
+    <div class="bg-gray-800 p-6 rounded-xl">
+      <h2 class="text-xl font-semibold mb-6">Protocol Stats</h2>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-gray-700 p-4 rounded-lg">
+          <div class="text-gray-400 mb-2">TVL</div>
+          <div class="text-2xl font-semibold">$1.24B</div>
+        </div>
+
+        <div class="bg-gray-700 p-4 rounded-lg">
+          <div class="text-gray-400 mb-2">APY</div>
+          <div class="text-2xl font-semibold">12.5%</div>
+        </div>
+
+        <div class="bg-gray-700 p-4 rounded-lg">
+          <div class="text-gray-400 mb-2">24h Volume</div>
+          <div class="text-2xl font-semibold">$45.2M</div>
+        </div>
+
+        <div class="bg-gray-700 p-4 rounded-lg">
+          <div class="text-gray-400 mb-2">Total Users</div>
+          <div class="text-2xl font-semibold">15.2K</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" crossorigin src="./bb58d54d3e58a45b.js"></script>
+
+
+  <div id="react-root"></div><w3m-modal style="--local-border-bottom-mobile-radius: 0px;"><template
+      shadowrootmode="open"><!----></template></w3m-modal>
+</body>
+
+</html>
